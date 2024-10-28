@@ -1,53 +1,39 @@
-#RDAP Registro.br
+# RDAP Registro.br
 
 Automação de consulta de domínios no RDAP do registro.br, simplificando a coleta de informações de registro de domínios brasileiros.
 
-##Descrição do Projeto
+## Descrição do Projeto
 Este projeto em Python realiza consultas automatizadas no servidor RDAP do registro.br para obter o status do dominio (existe ou não existe)
 
-##Funcionalidades
+## Funcionalidades
 Consulta Automatizada: Busca automática de dados RDAP para cada domínio listado no arquivo domain.txt.
 Tratamento de Respostas HTTP: Lida com diferentes códigos HTTP (200, 404, 403), garantindo a continuidade e robustez das consultas.
-Geração de Relatórios: Exporta dados dos domínios, incluindo status, datas de criação, alteração e expiração, além do contato de email, em um arquivo resultados.txt.
-Pré-requisitos
+
+Geração de Relatórios: Exporta o status dos domínios se existe 200 se não existe 404 e salva em um arquivo chamado resultados.txt.
+
+## Pré-requisitos
 Python 3.x
+
 Bibliotecas: requests, datetime, time, sys, os
-Instalação
-Clone o repositório:
 
-bash
-Copiar código
-git clone https://github.com/airton-git/rdap-registro-br.git
-cd rdap-registro-br
-Instale os requisitos, se necessário:
+### Instale os requisitos, se necessário:
 
-bash
-Copiar código
-pip install requests
-Adicione os domínios que deseja consultar em um arquivo domain.txt no mesmo diretório do script.
+requests, time, datetime, sys, os
+
+## Base de domínios
+Adicione os domínios que deseja consultar em um arquivo domain.txt no mesmo diretório do script 1 domínio por linha.
 
 Uso
-Execute o script para iniciar as consultas:
+Execute o script app.py para iniciar as consultas:
 
-bash
-Copiar código
-python rdap_consulta.py
-As respostas serão salvas em resultados.txt com as seguintes informações para cada domínio: nome, status, data de criação, alteração, expiração e email (se disponível).
+## Resultados
+O arquivo resultados.txt é gerado automaticamente, contendo uma linha para cada domínio consultado.
 
-Resultados
-O arquivo resultados.txt é gerado automaticamente, contendo uma linha para cada domínio consultado. Os dados incluem:
+As respostas serão salvas em resultados.txt com as seguintes informações para cada domínio nome do domínio;código.
+Exemplo: dominio.com.br;200
 
-Domínio
-Status HTTP
-Datas relevantes (criação, última alteração, expiração)
-Email de contato
-Exemplo de Saída
-plaintext
-Copiar código
-dominio.com.br;200;2023-01-01 12:00:00;2024-01-01 12:00:00;2023-06-01 12:00:00;email@dominio.com.br
-dominio_nao_existente.com.br;404;None;None;None;None
-Contribuições
+# Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para aprimorar o projeto.
 
-Licença
+# Licença
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
