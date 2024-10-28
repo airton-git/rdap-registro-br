@@ -3,7 +3,7 @@
 Automação de consulta de domínios no RDAP do registro.br, simplificando a coleta de informações de registro de domínios brasileiros.
 
 ##Descrição do Projeto
-Este projeto em Python realiza consultas automatizadas no servidor RDAP do registro.br para obter informações sobre domínios, como status, datas de criação e expiração, e contato de email. O projeto visa facilitar a verificação de grandes volumes de domínios, registrando resultados detalhados em um arquivo.
+Este projeto em Python realiza consultas automatizadas no servidor RDAP do registro.br para obter o status do dominio (existe ou não existe)
 
 ##Funcionalidades
 Consulta Automatizada: Busca automática de dados RDAP para cada domínio listado no arquivo domain.txt.
